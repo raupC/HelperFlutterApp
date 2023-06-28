@@ -10,7 +10,9 @@ class WidgetColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment
-          .start, // establece la posicion de los elementos dentro de la columna
+          .start,
+          crossAxisAlignment: CrossAxisAlignment.end,
+           // establece la posicion de los elementos dentro de la columna
       children: [
         Container(
           // es el cuadrado pintado en pantalla

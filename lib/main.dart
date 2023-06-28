@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import './widgets/Widget_Column.dart';
 import './widgets/Widget_Row.dart';
-
-
+import 'widgets/Widget_ColumnRow.dart';
+import 'widgets/tableClient.dart';
 
 
 void main(List<String> args) {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp( 
       home: Scaffold(
-        body: WidgetRow(),
+        body: TableClient(),
       ),
     );
   }
