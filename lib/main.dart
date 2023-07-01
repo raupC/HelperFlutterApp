@@ -1,26 +1,29 @@
-
-
 import 'package:flutter/material.dart';
-import './widgets/Widget_Column.dart';
-import './widgets/Widget_Row.dart';
-import 'widgets/Widget_ColumnRow.dart';
-import 'widgets/tableClient.dart';
+import 'package:provider/provider.dart';
+import 'package:widgets/providers/heroesInfo.dart';
+import 'package:widgets/screens/Screen_home.dart';
 
-
-void main(List<String> args) {
-  runApp(MyApp());
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
-      home: Scaffold(
-        body: TableClient(),
+    return ChangeNotifierProvider(
+      create: (context) => HeroesInfo(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        initialRoute: 'home',
+        routes: {'home': (context) => Screenhome()},
       ),
     );
   }
 }
-
